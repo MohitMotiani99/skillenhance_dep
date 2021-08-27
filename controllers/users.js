@@ -83,7 +83,7 @@ MongoClient.connect(url,(err,db)=>{
     app.get('/signup',(req,res)=>{
         request.get({
             headers:{'content-type':'application/json'},
-            url:'http://localhost:3000/auth/login',
+            url:'http://3.15.22.27:3000/auth/login',
         },(err,response)=>{
             console.log(response.access_token)
             

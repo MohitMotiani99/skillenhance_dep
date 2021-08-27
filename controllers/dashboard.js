@@ -67,7 +67,7 @@ MongoClient.connect(url,function(err,db){
         var a_set = new Set()
           request.get({
             headers:{'content-type':'application/json'},
-            url:'http://localhost:8089/questions'
+            url:'http://3.15.22.27:8089/questions'
             },(err,response,body)=>{
             if(err) throw err
               //console.log(body)
@@ -85,7 +85,7 @@ MongoClient.connect(url,function(err,db){
                 new Promise((resolve,reject)=>{
                   request.get({
                     headers:{'content-type':'application/json'},
-                    url:'http://localhost:8088/answers'
+                    url:'http://3.15.22.27:8088/answers'
                     },(err,response,body)=>{
                     if(err) throw err
           
@@ -127,9 +127,9 @@ MongoClient.connect(url,function(err,db){
       var posts = req.params.posts
       var host_url;
       if(posts == 'questions')
-      host_url='http://localhost:8089/questions'
+      host_url='http://3.15.22.27:8089/questions'
       else if(posts == 'answers')
-      host_url='http://localhost:8088/answers'
+      host_url='http://3.15.22.27:8088/answers'
       request.get({
         headers:{'content-type':'apllication/json'},
         url:host_url
@@ -153,7 +153,7 @@ MongoClient.connect(url,function(err,db){
     app.get('/trending',(req,res)=>{
       request.get({
         headers:{'content-type':'application/json'},
-        url:'http://localhost:3300/questions/sort/ViewCount/desc'
+        url:'http://3.15.22.27:3300/questions/sort/ViewCount/desc'
       },(err,response,body)=>{
         res.send(JSON.parse(body))
       })
